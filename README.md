@@ -7,7 +7,7 @@ A minimal example of a gRPC service defined in a proto implemented in python wit
 To regenerate pb2 files from the root directory:
 
 ```bash
-python -m grpc_tools.protoc --proto_path=. --python_out=. --grpc_python_out=. ./proto/lobby_service.proto
+python -m grpc_tools.protoc -Igen_files=.  --proto_path=. --python_out=. --grpc_python_out=. ./lobby_service.proto
 ```
 
 To run the server from the root directory:

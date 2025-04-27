@@ -1,9 +1,7 @@
 import grpc
 from concurrent import futures
-import proto.lobby_service_pb2 as lobby_service_pb2
-import proto.lobby_service_pb2_grpc as lobby_service_pb2_grpc
-# import lobby_service_pb2
-# import lobby_service_pb2_grpc
+from gen_files import lobby_service_pb2
+from gen_files import lobby_service_pb2_grpc
 
 
 # Example gRPC service implementation for the LobbyService.

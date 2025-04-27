@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-from proto import lobby_service_pb2 as proto_dot_lobby__service__pb2
+from gen_files import lobby_service_pb2 as gen__files_dot_lobby__service__pb2
 
 GRPC_GENERATED_VERSION = '1.71.0'
 GRPC_VERSION = grpc.__version__
@@ -18,7 +18,7 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in proto/lobby_service_pb2_grpc.py depends on'
+        + f' but the generated code in gen_files/lobby_service_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
@@ -37,8 +37,8 @@ class LobbyServiceStub(object):
         """
         self.ListLobbies = channel.unary_unary(
                 '/LobbyService/ListLobbies',
-                request_serializer=proto_dot_lobby__service__pb2.ListLobbiesRequest.SerializeToString,
-                response_deserializer=proto_dot_lobby__service__pb2.ListLobbiesResponse.FromString,
+                request_serializer=gen__files_dot_lobby__service__pb2.ListLobbiesRequest.SerializeToString,
+                response_deserializer=gen__files_dot_lobby__service__pb2.ListLobbiesResponse.FromString,
                 _registered_method=True)
 
 
@@ -58,8 +58,8 @@ def add_LobbyServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListLobbies': grpc.unary_unary_rpc_method_handler(
                     servicer.ListLobbies,
-                    request_deserializer=proto_dot_lobby__service__pb2.ListLobbiesRequest.FromString,
-                    response_serializer=proto_dot_lobby__service__pb2.ListLobbiesResponse.SerializeToString,
+                    request_deserializer=gen__files_dot_lobby__service__pb2.ListLobbiesRequest.FromString,
+                    response_serializer=gen__files_dot_lobby__service__pb2.ListLobbiesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -88,8 +88,8 @@ class LobbyService(object):
             request,
             target,
             '/LobbyService/ListLobbies',
-            proto_dot_lobby__service__pb2.ListLobbiesRequest.SerializeToString,
-            proto_dot_lobby__service__pb2.ListLobbiesResponse.FromString,
+            gen__files_dot_lobby__service__pb2.ListLobbiesRequest.SerializeToString,
+            gen__files_dot_lobby__service__pb2.ListLobbiesResponse.FromString,
             options,
             channel_credentials,
             insecure,
