@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+/* Service for managing game lobbies. */
+service LobbyService {
+  /* Get a list of all lobbies. */
+  rpc ListLobbies(ListLobbiesRequest) returns (ListLobbiesResponse);
+}
+
+/* Empty request for listing lobbies. */
+message ListLobbiesRequest {
+}
+
+/* Response containing a list of lobbies. */
+message ListLobbiesResponse {
+  repeated Lobby lobbies = 1;
+}
+
+/* Game lobby information. */
+message Lobby {
+  /* Unique identifier for the lobby. */
+  string id = 1;
+}
