@@ -20,6 +20,6 @@ To send requests to the server with postman:
 
 - Create a new gRPC request
 - Enter the URL `localhost:50051`
-- Import the `proto/lobby_service.proto` proto service definition
+- Import the `lobby_service.proto` proto service definition
 - Select the method `ListLobbies`
 - Invoke
